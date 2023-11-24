@@ -54,7 +54,29 @@ export default Header
 ```
 At the `nav` element here we are using flex and flex-col which means the `siteTitle` and the div containing the links to other pages are displays them as a column. Then we use `md:` to specify a change in behavior for larger screens (md and above breakpoint). We change it to `flex-row` and renders the page with a row after reachinging and exceeding the medium breakpoint. In side the links for servies, contact and testimonials we needed to justify the content of the anchor tag, so here we use `flex items-center` to center the text (items inside the anchor) vertically.
 
+Tailwind uses a mobile first approach, meaning you only apply styles at certain breakpoints and above.
 
+## Footer
+We'll take the footer element out of the pages/index.js file and create a new component called footer.
+
+```shell
+code ./src/components/footer.js
+```
+We'll remove the item footer from the layout and add our own
+```js
+import * as React from "react"
+
+const Footer = ({ siteTitle }) => (
+    <footer className="">
+    {`${siteTitle}`} © {new Date().getFullYear()} &middot; Built with
+    {` `}
+    <a href="https://www.gatsbyjs.com">Gatsby</a>
+  </footer>
+)
+
+export default Footer
+
+```
 
 ## Questions
 - What is postcss?
