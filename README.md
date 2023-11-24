@@ -29,6 +29,31 @@ Of course there will also be a nav/header and a footer. Bonus points if we can f
 # Header
 Lets create a header which will serve as our nav for our page. The starter already includes a header.js file in our components so we'll modify that.
 
+```jsx
+import * as React from "react"
+import { Link } from "gatsby"
+
+const Header = ({ siteTitle }) => (
+  <header>
+    <nav className="flex flex-col shadow-md md:py-4 md:flex-row md:justify-between">
+      <div><Link className="text-3xl" to="/" >
+        {siteTitle}
+      </Link></div>
+      <div className="flex gap-4 justify-between">
+        <Link className=" flex items-center" to="#services">Services</Link>
+        <Link className=" flex items-center" to="#testimonials">Testimonials</Link>
+        <Link className=" flex items-center" to="#contact">Contact</Link>
+      </div>
+    </nav>
+
+  </header>
+)
+
+export default Header
+
+```
+At the `nav` element here we are using flex and flex-col which means the `siteTitle` and the div containing the links to other pages are displays them as a column. Then we use `md:` to specify a change in behavior for larger screens (md and above breakpoint). We change it to `flex-row` and renders the page with a row after reachinging and exceeding the medium breakpoint. In side the links for servies, contact and testimonials we needed to justify the content of the anchor tag, so here we use `flex items-center` to center the text (items inside the anchor) vertically.
+
 
 
 ## Questions
