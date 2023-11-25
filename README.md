@@ -78,6 +78,42 @@ export default Footer
 
 ```
 
+## Hero Section
+Next we are going to work on the here section which will feature some content on one side and an image on the other side. Lets create a hero-image-right.js file and 
+
+```shell
+code ./src/components/hero-image-right.js
+```
+
+Here are the contents of the file
+
+```js
+import React from "react"
+
+const HeroImageRight = () => (
+    <>
+        <section className="relative">
+            <div className="container flex flex-col items-center mt-4 md:mt-6 lg:mt-12 mx-auto md:flex-row-reverse ">
+                {/* image on the right */}
+                <div className="basis-1/2 grid justify-items-center">
+                    <img className="object-cover h-48 w-96 rounded-lg shadow-md" src="https://images.unsplash.com/photo-1444962668425-360f59fa2c24?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
+                </div>
+                {/* content on left */}
+                <div className="basis-1/2">
+                    <h2 className="text-3xl font-bold md:text-6xl md:font-extrabold">Learning <span className="text-amber-300">Tailwind</span></h2>
+                    <p>Just learning tailwind because I wanted to learn more about UI frameworks and make good looking landing pages using gatsby. Building up projects is how I best learn. How about you? Tag me @juanjuanzero and let me know!</p>
+                </div>
+            </div>
+            <div className="hidden lg:block h-48 w-96 bg-amber-300 rounded-full absolute -right-0.5 -bottom-5 -z-10"></div>
+        </section>
+    </>
+)
+
+export default HeroImageRight;
+```
+
+So we add an accent dive that is positioned absolute, relative from its parent. This is why you'll see that the section has a relative className. This accent div will actually be hidden for smaller screens and only display when it hits the lg breakpoint, which sets the display block with `lg:block`. We'll want to it display the image at the top on mobile so its going to start with `flex-col` and then at the medium breakpoint we'll reverse it with `flex-col-reverse`.
+
 ## Questions
 - What is postcss?
 PostCss is a css processor, that compiles your css into css that works for any thing. In this case, it compiles tailwind classes you type in your files into css that you can use.
