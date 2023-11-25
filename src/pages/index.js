@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import HeroImageRight from "../components/hero-image-right"
 
 const links = [
   {
@@ -70,9 +71,7 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 
 const IndexPage = () => (
   <Layout>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <HeroImageRight></HeroImageRight>
   </Layout>
 )
 
