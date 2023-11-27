@@ -92,15 +92,15 @@ import React from "react"
 
 const HeroImageRight = () => (
     <>
-        <section className="relative p-6">
-            <div className="container flex flex-col items-center mt-4 md:mt-6 lg:mt-12 mx-auto md:flex-row-reverse ">
+        <section className="relative">
+            <div className="container flex flex-col items-center p-6 md:my-6 lg:my-12 mx-auto md:flex-row-reverse ">
                 {/* image on the right */}
                 <div className="basis-1/2 grid justify-items-center">
-                    <img className="object-cover h-48 w-96 rounded-lg shadow-md" src="https://images.unsplash.com/photo-1444962668425-360f59fa2c24?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
+                    <img className="object-cover md:h-48 md:w-96 rounded-lg shadow-md" src="https://images.unsplash.com/photo-1444962668425-360f59fa2c24?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></img>
                 </div>
                 {/* content on left */}
-                <div className="basis-1/2">
-                    <h2 className="text-3xl font-bold md:text-6xl md:font-extrabold">Learning <span className="text-amber-300">Tailwind</span></h2>
+                <div className="basis-1/2 p-3">
+                    <h2 className="text-3xl md:text-6xl font-bold md:font-extrabold">Learning <span className="text-amber-300">Tailwind</span></h2>
                     <p>Just learning tailwind because I wanted to learn more about UI frameworks and make good looking landing pages using gatsby. Building up projects is how I best learn. How about you? Tag me @juanjuanzero and let me know!</p>
                 </div>
             </div>
@@ -121,7 +121,40 @@ The sevices section will be a list of services it will be 3 to start they will b
 code ./src/components/services.md
 ```
 
-We'll create another section
+We'll create another section and add the following code.
+
+```js
+import React from 'react'
+import iconMug from "../images/icons/mug-hot.svg"
+import iconShop from "../images/icons/shop.svg"
+import iconThumbs from "../images/icons/thumbs-up.svg"
+
+const services = [
+    { href: "../images/icons/mug-hot.svg", icon: iconMug, title: "Consulting", subtitle: "Let's work together to find your best solution that fits you best" },
+    { href: "../images/icons/mug-hot.svg", icon: iconShop, title: "E-Commerce", subtitle: "Get a modern shop up and running in no time" },
+    { href: "../images/icons/mug-hot.svg", icon: iconThumbs, title: "Social Media", subtitle: "Build an audience for your brand, and stand out in the crowd" },
+]
+
+const ServicesList = () => (
+    <section className='relative bg-slate-200 p-6'>
+        <h2 id="services" className='text-3xl font-extrabold text-center'>Services</h2>
+        <div className='container flex flex-col mx-auto items-center md:flex-row justify-evenly'>
+            {/* loop through all services listed */}
+            {services.map(s =>
+                <div className='bg-white rounded-lg flex flex-col w-48 m-2 p-4 items-center'>
+                    <img className="w-1/2 fill-white" src={s.icon}></img>
+                    <h2 className='text-xl text-center text-amber-500 font-extrabold mt-2'>{s.title}</h2>
+                    <div className='text-center text-slate-600'>{s.subtitle}</div>
+                </div>
+            )}
+        </div>
+    </section>
+)
+
+export default ServicesList;
+```
+
+See how we are using a services array and maping over them? This is a react pattern that you see often. If you want to convert this into a theme for gatsby this list can be added as part of the site metadata. Also we learned more about how webpack treats icons, for gatsby, we bring the icons as static elemens. There is a way to bring them in as components but we'd need to use another plugin.
 
 ## Questions
 - What is postcss?
