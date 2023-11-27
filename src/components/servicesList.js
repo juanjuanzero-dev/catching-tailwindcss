@@ -10,7 +10,8 @@ const services = [
 ]
 
 const ServicesList = () => (
-    <section className='relative bg-slate-200'>
+    <section className='relative bg-slate-200 p-6'>
+        <h2 id="services" className='text-3xl font-extrabold text-center'>Services</h2>
         <div className='container flex flex-col mx-auto items-center md:flex-row justify-evenly'>
             {/* loop through all services listed */}
             {services.map(s =>

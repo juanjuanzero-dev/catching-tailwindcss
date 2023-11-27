@@ -92,7 +92,7 @@ import React from "react"
 
 const HeroImageRight = () => (
     <>
-        <section className="relative">
+        <section className="relative p-6">
             <div className="container flex flex-col items-center mt-4 md:mt-6 lg:mt-12 mx-auto md:flex-row-reverse ">
                 {/* image on the right */}
                 <div className="basis-1/2 grid justify-items-center">
@@ -113,6 +113,15 @@ export default HeroImageRight;
 ```
 
 So we add an accent dive that is positioned absolute, relative from its parent. This is why you'll see that the section has a relative className. This accent div will actually be hidden for smaller screens and only display when it hits the lg breakpoint, which sets the display block with `lg:block`. We'll want to it display the image at the top on mobile so its going to start with `flex-col` and then at the medium breakpoint we'll reverse it with `flex-col-reverse`.
+
+# Services
+The sevices section will be a list of services it will be 3 to start they will be displayed in grid featuring an icon, and a small one word or phrase service that is added. 
+
+```shell
+code ./src/components/services.md
+```
+
+We'll create another section
 
 ## Questions
 - What is postcss?
