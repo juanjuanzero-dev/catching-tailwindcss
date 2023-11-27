@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import HeroImageRight from "../components/hero-image-right"
 import ServicesList from "../components/servicesList"
+import TestimonialList from "../components/testimonialList"
 
 const links = [
   {
@@ -74,6 +75,7 @@ const IndexPage = () => (
   <Layout>
     <HeroImageRight></HeroImageRight>
     <ServicesList></ServicesList>
+    <TestimonialList></TestimonialList>
   </Layout>
 )
 

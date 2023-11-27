@@ -156,6 +156,13 @@ export default ServicesList;
 
 See how we are using a services array and maping over them? This is a react pattern that you see often. If you want to convert this into a theme for gatsby this list can be added as part of the site metadata. Also we learned more about how webpack treats icons, for gatsby, we bring the icons as static elemens. There is a way to bring them in as components but we'd need to use another plugin.
 
+## Testimonials
+Next we will use create testimonials. This will be similar in the function of the services list where we display a few block, so we'll start with a
+
+```shell
+code ./src/components/testimonialList.js
+```
+
 ## Questions
 - What is postcss?
 PostCss is a css processor, that compiles your css into css that works for any thing. In this case, it compiles tailwind classes you type in your files into css that you can use.
