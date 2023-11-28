@@ -118,7 +118,7 @@ So we add an accent dive that is positioned absolute, relative from its parent. 
 The sevices section will be a list of services it will be 3 to start they will be displayed in grid featuring an icon, and a small one word or phrase service that is added. 
 
 ```shell
-code ./src/components/services.md
+code ./src/components/services.js
 ```
 
 We'll create another section and add the following code.
@@ -162,6 +162,54 @@ Next we will use create testimonials. This will be similar in the function of th
 ```shell
 code ./src/components/testimonialList.js
 ```
+
+Here is the code that im going to put in:
+
+```js
+import React from 'react'
+
+import benDen from '../images/profiles/matheus-ferrero-W7b3eDUb_2I-unsplash.jpg'
+import joe from '../images/profiles/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg'
+import podmatch from '../images/profiles/podmatch-UpiF461EAHU-unsplash.jpg'
+
+const testimonials = [
+    { name: "John Doe", testimonial: "Working with them was an absolute delight. They are always willing to lend a helping hand and has a great sense of humor.", image: joe},
+    { name: "Samantha Smith", testimonial: "I had the pleasure of working with you on a project and you were a true professional.", image: benDen },
+    { name: "Daniel David", testimonial: "It was a pleasure working with you. You were a great communicator and always goes above and beyond to ensure that everyone is on the same page." , image: podmatch}
+]
+
+const TestimonialList = () => (
+    <>
+        <section className='relative p-6'>
+            <h2 id="testimonials" className='text-3xl font-extrabold text-center'>Testimonials</h2>
+            <div className=' flex flex-nowrap gap-12 overflow-x-auto p-6 md:justify-center'>
+                {testimonials.map(t =>
+                    <div className='flex flex-row h-48 w-80 bg-slate-200 rounded-lg shadow-md overflow-hidden flex-none'>
+                        <img className=' object-fill w-2/5' src={t.image}></img>
+                        <div className='flex flex-col p-4 w-3/5'>
+                            <h2 className='text-xl font-extrabold'>{t.name}</h2>
+                            <div className='text-sm'>{t.testimonial}</div>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </section>
+    </>
+)
+
+export default TestimonialList;
+```
+
+In gatsby a way you can put in your static assets is using the import statement. You can't just put a reference as a part of testimonial object. This is a thing with how webpack packages these assets up. The design we want to use forces the assets to stay as a row even on mobile which is why we use `flex-nowrap` to let the content overflow off the page. Then we use `overflow-x-auto` so that when we do reach a breakpoint users can scroll to see the content.
+
+## Contact Form
+Here we will create our last section, our call to action to get customers to send us their email with a message. 
+
+```shell
+code ./src/components/contact.js
+```
+
+
 
 ## Questions
 - What is postcss?
