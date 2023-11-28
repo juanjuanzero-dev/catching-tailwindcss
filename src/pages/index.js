@@ -7,6 +7,7 @@ import Seo from "../components/seo"
 import HeroImageRight from "../components/hero-image-right"
 import ServicesList from "../components/servicesList"
 import TestimonialList from "../components/testimonialList"
+import ContactSection from "../components/contact"
 
 const links = [
   {
@@ -76,6 +77,7 @@ const IndexPage = () => (
     <HeroImageRight></HeroImageRight>
     <ServicesList></ServicesList>
     <TestimonialList></TestimonialList>
+    <ContactSection></ContactSection>
   </Layout>
 )
 
