@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
   <header>
-    <nav className="flex flex-col shadow-md md:py-4 md:flex-row md:justify-between">
+    <nav className="flex flex-col shadow-md p-4 md:flex-row md:justify-between">
       <div><Link className="text-3xl" to="/" >
         {siteTitle}
       </Link></div>

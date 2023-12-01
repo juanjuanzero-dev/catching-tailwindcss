@@ -4,9 +4,9 @@ import iconShop from "../images/icons/shop.svg"
 import iconThumbs from "../images/icons/thumbs-up.svg"
 
 const services = [
-    { href: "../images/icons/mug-hot.svg", icon: iconMug, title: "Consulting", subtitle: "Let's work together to find your best solution that fits you best" },
-    { href: "../images/icons/mug-hot.svg", icon: iconShop, title: "E-Commerce", subtitle: "Get a modern shop up and running in no time" },
-    { href: "../images/icons/mug-hot.svg", icon: iconThumbs, title: "Social Media", subtitle: "Build an audience for your brand, and stand out in the crowd" },
+    {  icon: iconMug, title: "Consulting", subtitle: "Let's work together to find your best solution that fits you best" },
+    {  icon: iconShop, title: "E-Commerce", subtitle: "Get a modern shop up and running in no time" },
+    {  icon: iconThumbs, title: "Social Media", subtitle: "Build an audience for your brand, and stand out in the crowd" },
 ]
 
 const ServicesList = () => (
